@@ -1,0 +1,24 @@
+name: build
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    timeout-minutes: 60
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Build container
+        run: podman build -t ghcr.io/martinpitt/swaypod:latest .
+
+      - name: Log into container registry
+        run: podman login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+
+      - name: Push containers to registry
+        run: podman push ghcr.io/martinpitt/swaypod:latest
