@@ -17,8 +17,6 @@ dnf -y install \
     pcmanfm pavucontrol nm-connection-editor eog evince gnome-keyring pinentry-gnome3 lxterminal gnome-disk-utility rofimoji \
     ansible man-db man-pages moreutils fd-find ripgrep gh \
     python3-boto python3-boto3 python3-openstacksdk libnotify \
-    pandoc texlive-ec texlive-pdfjam texlive-beamer \
     /usr/bin/scanimage /usr/bin/pngquant /usr/bin/convert \
-    calibre qt5-qtwayland \
 
 dnf clean all
