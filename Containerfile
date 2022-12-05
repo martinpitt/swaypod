@@ -1,7 +1,7 @@
 FROM registry.fedoraproject.org/fedora:latest
 
-ADD install.sh /
-RUN /install.sh && rm /install.sh
+ADD install.sh dummy-deps*.rpm /
+RUN /install.sh && rm /install.sh /*.rpm
 
 ADD setup.sh /
 RUN /setup.sh && rm /setup.sh

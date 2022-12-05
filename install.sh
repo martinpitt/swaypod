@@ -4,6 +4,8 @@ set -ex
 # enable manpages
 sed -i s/nodocs// /etc/dnf/dnf.conf
 
+rpm -i --verbose /dummy-deps*.rpm
+
 dnf -y swap coreutils-single coreutils-full
 dnf -y update
 
