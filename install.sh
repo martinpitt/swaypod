@@ -36,5 +36,7 @@ dnf -y install \
     eog \
     evince \
     /usr/bin/scanimage /usr/bin/pngquant /usr/bin/convert \
+    pandoc texlive-ec texlive-pdfjam texlive-beamer \
+    calibre qt5-qtwayland \
 
 dnf clean all
